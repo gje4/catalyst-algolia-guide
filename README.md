@@ -1,5 +1,8 @@
 ## How to Integrate Algolia SearchBox into Catalyst
 
+## **Demo Site**
+https://catalyst-algolia.vercel.app/
+
 
 ## **Introduction**
 The introduction consists of 2-3 sentences to orient the reader. State the guide’s purpose.
