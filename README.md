@@ -36,7 +36,7 @@ Experience using Next.js
 5. Update the code in index.tsx to use the code from here,
    https://github.com/gje4/catalyst-algolia/blob/main/components/quick-search/index.tsx.
 6. Update the algoliaClient in index.tsx to use your correct indexName.  By default the Algolia BigCommerce app names the index BigCommerce.  You can then delete the _actions directory.
- <img width="446" alt="Screenshot 2024-02-21 at 3 00 12 PM" src="https://github.com/gje4/catalyst-algolia/assets/2981963/106cc009-67f3-40f6-a47f-bab68e491106">
+<img width="468" alt="Screenshot 2024-02-26 at 3 37 57 PM" src="https://github.com/gje4/catalyst-algolia-guide/assets/2981963/c923dab5-5009-4983-91fa-1a3e76f294df">
 
  
 7. Run the app pnpm run dev, and check the quick search box to see data returned from algolia.
