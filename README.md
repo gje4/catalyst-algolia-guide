@@ -5,7 +5,6 @@ https://catalyst-algolia.vercel.app/
 
 
 ## **Introduction**
-The introduction consists of 2-3 sentences to orient the reader. State the guide’s purpose.
 
 Developers can quickly integrate Algolia search into the BigCommerce frontend Catalyst to enable search across all products.
 This guide walks through the basic integration and provides files that can be copy and pasted into Catalyst CORE app.
