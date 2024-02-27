@@ -24,7 +24,7 @@ To complete the guide, you will need the following:
 
 ## **Steps**
 1. Set up and have Catalyst running ([instructions available here](https://github.com/bigcommerce/catalyst))
-2. Add Algolia keys to .env:
+2. Add Algolia keys to your existing .env.local file:
    * `ALGOLIA_APP_ID=`
    * `ALGOLIA_APP_KEY=`
 4. Install the following:
