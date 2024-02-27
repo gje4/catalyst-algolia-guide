@@ -27,7 +27,7 @@ Experience using Next.js
 
 ## **Steps**
 
-1. Once you have catalyst running.  Grab the quick search files from here.
+1. Setup and have catalyst running, https://github.com/bigcommerce/catalyst.
 2. Add Algolia keys to .env.
 `  ALGOLIA_APP_ID=
    ALGOLIA_APP_KEY=`
