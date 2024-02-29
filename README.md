@@ -24,19 +24,20 @@ To complete the guide, you will need the following:
 
 ## **Steps**
 1. Set up and have a Catalyst storefront running - [instructions available here](https://github.com/bigcommerce/catalyst)
-2. Add the following Algolia keys, which you can find in your Algolia account, to the existing .env.local file in your Catalyst storefront repository:
-   * `ALGOLIA_APP_ID=`
-   * `ALGOLIA_APP_KEY=`
+2. Add the following Algolia keys, which you can find in your Algolia account, to the existing .env.local file in your Catalyst storefront repository. **_IF this is your first time using a new Algolia account, be sure to “regenerate” your Search Only API key before using it_**:
+   * `NEXT_PUBLIC_ALGOLIA_APP_ID=YOUR_APP_ID`
+   * `NEXT_PUBLIC_ALGOLIA_APP_KEY=YOUR_SEARCH_ONLY_API_KEY`
 4. Install the following dependencies in your repository:
    * `npm i react-instantsearch`
    * `npm i -S algoliasearch`
-6. Add the files `algoliasearchbox.tsx` and `algoliaSearchHits.tsx` to the [`quicksearch` component folder](https://github.com/gje4/catalyst-algolia/tree/main/components/quick-search)
+6. Add the files `algoliasearchbox.tsx` and `algoliaSearchHits.tsx` to the [`quick-search`](https://github.com/gje4/catalyst-algolia/tree/main/components/quick-search) component folder
 7. Update the code in `index.tsx` to use the code found [here](https://github.com/gje4/catalyst-algolia/blob/main/components/quick-search/index.tsx)
-8. Update the `algoliaClient` in `index.tsx` to use your correct `indexName`.  By default, the Algolia <> BigCommerce app names the index `BigCommerce`.  You can then delete the `_actions` directory so your file structure mirrors the screenshot below.
+8. Update the `algoliaClient` in `index.tsx` to use your correct `indexName`.  By default, the Algolia <> BigCommerce app names the index `BigCommerce`.
+9. You can then delete the `_actions` directory so your file structure mirrors the screenshot below.
 <img width="468" alt="Screenshot 2024-02-26 at 3 37 57 PM" src="https://github.com/gje4/catalyst-algolia-guide/assets/2981963/c923dab5-5009-4983-91fa-1a3e76f294df">
 
  
-9. Run the app by running `pnpm run dev`, and check the QuickSearch box to see the data returned from Algolia.
+10. Run the app by running `pnpm run dev`, and check the QuickSearch box to see the data returned from Algolia.
 
 
 ## Resources
