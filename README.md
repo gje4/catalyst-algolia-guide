@@ -25,8 +25,8 @@ To complete the guide, you will need the following:
 ## **Steps**
 1. Set up and have a Catalyst storefront running - [instructions available here](https://github.com/bigcommerce/catalyst)
 2. Add the following Algolia keys, which you can find in your Algolia account, to the existing .env.local file in your Catalyst storefront repository. **_IF this is your first time using a new Algolia account, be sure to “regenerate” your Search Only API key before using it_**:
-   * `NEXT_PUBLIC_ALGOLIA_APP_ID=YOUR_APP_ID`
-   * `NEXT_PUBLIC_ALGOLIA_APP_KEY=YOUR_SEARCH_ONLY_API_KEY`
+   * `NEXT_PUBLIC_ALGOLIA_APP_ID=`*YOUR_APP_ID*
+   * `NEXT_PUBLIC_ALGOLIA_APP_KEY=`*YOUR_SEARCH_ONLY_API_KEY*
 4. Install the following dependencies in your repository:
    * `npm i react-instantsearch`
    * `npm i -S algoliasearch`
