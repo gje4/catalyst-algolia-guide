@@ -25,8 +25,8 @@ interface SearchProps extends PropsWithChildren {
 export const QuickSearch = ({ children }: SearchProps) => {
   const [open, setOpen] = useState(false);
   const algoliaClient = algoliasearch(
-    process.env.ALOGLIA_APP_ID || '',
-    process.env.ALGOLIA_APP_KEY || '',
+    process.env.NEXT_PUBLIC_ALGOLIA_APP_ID || '',
+    process.env.NEXT_PUBLIC_ALGOLIA_APP_KEY || '',
   );
 
   return (
