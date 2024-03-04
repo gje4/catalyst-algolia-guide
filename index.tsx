@@ -14,7 +14,7 @@ import {
   SheetOverlay,
   SheetTrigger,
 } from '@bigcommerce/components/sheet';
-import { CustomSearchBox } from '~/components/quick-search/algoliasearchbox';
+import { CustomSearchBox } from '~/components/quick-search/algoliaSearchBox';
 import AlgoliaSearchHits from '~/components/quick-search/algoliaSearchHits';
 import { cn } from '~/lib/utils';
 
@@ -26,7 +26,7 @@ export const QuickSearch = ({ children }: SearchProps) => {
   const [open, setOpen] = useState(false);
   const algoliaClient = algoliasearch(
     process.env.NEXT_PUBLIC_ALGOLIA_APP_ID || '',
-    process.env.NEXT_PUBLIC_ALGOLIA_APP_KEY || '',
+    process.env.NEXT_PUBLIC_ALGOLIA_API_KEY || '',
   );
 
   return (
