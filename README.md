@@ -1,46 +1,70 @@
-## How to Integrate Algolia SearchBox into Catalyst
+**Guide**
+# Integrating Algolia SearchBox into Catalyst
 
-## **Demo Site**
+You can integrate Algolia search into Catalyst storefronts to help shoppers search all products, categories, and more.
+
+This guide demonstrates a basic integration and provides example code for global product search that you can add to the core code of your Catalyst storefront, or to `apps/core` in the Catalyst [monorepo](/docs/monorepo).
+
+## Demo site
+
+For a working demo of an Algolia integration with Catalyst, see the following example:
+
+```shell copy
 https://catalyst-algolia.vercel.app/
+```
 
+## Prerequisites
 
-## **Introduction**
+To follow this guide, you need the following:
 
-Developers can quickly integrate Algolia search into the BigCommerce frontend Catalyst to enable search across all products.
-This guide walks through the basic integration and provides files that can be copy and pasted into Catalyst CORE app.
+* Node.js 18+
+* A Node.js package manager, such as `npm`, `pnpm`, or `yarn`
+* Working knowledge of [Next.js](https://nextjs.org)
+* An [Algolia account](https://dashboard.algolia.com/users/sign_up)
+* A [BigCommerce store](https://www.bigcommerce.com/start-your-trial/) or [sandbox store](https://start.bigcommerce.com/developer-sandbox/)
 
+## Steps
 
-## **Prerequisites**
-To complete the guide, you will need the following:
-* A [Catalyst storefront set up](https://github.com/bigcommerce/catalyst)
-* Experience using Next.js
-* A BigCommerce Store with the [Algolia app](https://www.bigcommerce.com/apps/algolia-search-discovery/) installed
-* An Algolia account
+1. Configure the core codebase for the Catalyst storefront and get it running in dev mode. See [CLI setup](/docs/cli) for quickstart instructions. If you configure Catalyst using the [Monorepo](/docs/monorepo), make sure the storefront is [associated with a BigCommerce store channel](https://developer.bigcommerce.com/docs/storefront/headless/channels).
 
+2. At the top of your [Algolia dashboard](https://dashboard.algolia.com), create an Algolia app that you intend to associate exclusively with your Catalyst storefront channel.
 
-## Requirements
-- Node.js 18+
-- `npm` (or `pnpm`/`yarn`)
+3. Install the [BigCommerce Algolia app](https://www.bigcommerce.com/apps/algolia-search-discovery/) and associate it with your Catalyst channel. Add the following Algolia-specific environment variables to the existing `.env.local` file in your Catalyst storefront. For more about other Catalyst environment variables, see [Environment variables](/docs/environment-variables).
 
-## **Steps**
-1. Set up and have a Catalyst storefront running - [instructions available here](https://github.com/bigcommerce/catalyst)
-2. Add the following Algolia keys, which you can find in your Algolia account, to the existing .env.local file in your Catalyst storefront repository. **_IF this is your first time using a new Algolia account, be sure to “regenerate” your Search Only API key before using it_**:
-   * `NEXT_PUBLIC_ALGOLIA_APP_ID=`*YOUR_APP_ID*
-   * `NEXT_PUBLIC_ALGOLIA_API_KEY=`*YOUR_SEARCH_ONLY_API_KEY*
-4. Install the following dependencies in your repository:
-   * `npm i react-instantsearch`
-   * `npm i -S algoliasearch`
-6. Add the files `algoliaSearchBox.tsx` and `algoliaSearchHits.tsx` to the [`quick-search`](https://github.com/gje4/catalyst-algolia/tree/main/components/quick-search) component folder
-7. Update the code in `index.tsx` to use the code found [here](https://github.com/gje4/catalyst-algolia/blob/main/components/quick-search/index.tsx)
-8. Update the `algoliaClient` in `index.tsx` to use your correct `indexName`.  By default, the Algolia <> BigCommerce app names the index `BigCommerce`
-9. You can then delete the `_actions` directory so your file structure mirrors the screenshot below
-<img width="468" alt="Screenshot 2024-02-26 at 3 37 57 PM" src="https://github.com/gje4/catalyst-algolia-guide/assets/2981963/c923dab5-5009-4983-91fa-1a3e76f294df">
+| Environment variable | Value |
+|:---------------------|:------|
+| `NEXT_PUBLIC_ALGOLIA_APP_ID` | Your Algolia app ID |
+| `NEXT_PUBLIC_ALGOLIA_API_KEY` | Your Algolia Search Only API key. You can find this value in the **API keys > All API keys** section of your [Algolia account dashboard](https://dashboard.algolia.com/account/api-keys/restricted). If this is your first time using the new Algolia app, visit the **Search > Index** section of the Algolia dashboard and click the **Refresh index** button to generate your search index. |
 
- 
-10. Run the app by running `pnpm run dev`, and check the QuickSearch box to see the data returned from Algolia
+4. Install the following dependencies in your Catalyst storefront:
 
+```shell copy
+  npm i react-instantsearch
+  npm i -S algoliasearch
+```
+
+5. Clone the [Algolia example repo](https://github.com/gje4/catalyst-algolia) in a directory parallel to your Catalyst storefront. Copy the `quick-search` directory into your Catalyst `components` directory.
+
+```shell copy
+git clone https://github.com/gje4/catalyst-algolia
+cd catalyst-algolia
+cp components/quick-search ../my-catalyst-storefront/components/quick-search
+cd ../my-catalyst-storefront/components/quick-search
+```
+
+Your storefront's file tree will mirror the following screenshot.
+
+[!A file tree with a components/quick-seach directory that contains the same files as the Algolia example repo](https://storage.googleapis.com/bigcommerce-production-dev-center/images/catalyst/algolia/algolia-integration-file-tree.png)
+
+6. In `components/quick-search/index.tsx`, update the value of `algoliaClient` to use your correct `indexName`. By default, the BigCommerce Algolia app names the search index `BigCommerce`.
+
+7.  Start your Catalyst storefront app in dev mode. Check the QuickSearch box to see the data supplied by the Algolia app index.
+
+```shell copy
+pnpm run dev
+```
 
 ## Resources
-* https://www.catalyst.dev/
-* https://www.algolia.com/doc/api-reference/widgets/instantsearch/js/
 
+* [Catalyst core docs](https://www.catalyst.dev/docs)
+* [Algolia search widget docs](https://www.algolia.com/doc/api-reference/widgets/instantsearch/js/)
