@@ -46,9 +46,11 @@ To follow this guide, you need the following:
 5. Clone the [Algolia example repo](https://github.com/gje4/catalyst-algolia) in a directory parallel to your Catalyst storefront. Copy the `quick-search` directory into your Catalyst `components` directory.
 
 ```shell copy
-git clone https://github.com/gje4/catalyst-algolia
-cd catalyst-algolia
-cp components/quick-search ../my-catalyst-storefront/components/quick-search
+git clone https://github.com/gje4/catalyst-algolia-guide
+cd catalyst-algolia-guide
+cp algoliasearchbox.tsx ../my-catalyst-storefront/components/quick-search/algoliasearchbox.tsx
+cp algoliaSearchHits.tsx ../my-catalyst-storefront/components/quick-search/algoliaSearchHits.tsx
+cp index.tsx ../my-catalyst-storefront/components/quick-search/index.tsx
 cd ../my-catalyst-storefront/components/quick-search
 ```
 
